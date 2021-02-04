@@ -7,7 +7,7 @@ let options={
     password:  '',
     database: 'elmanartravel'
 }
-if(process.NODE_ENV==='production'){
+if(process.env.NODE_ENV==='production'){
     options={
         host:  'manartravel-1510421787193:us-central1:manar-travel-sql-1',
         user:  'root',
