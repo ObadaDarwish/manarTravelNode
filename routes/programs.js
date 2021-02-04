@@ -4,7 +4,7 @@ var con = require('../db');
 
 
 router.get('/getAllManarPrograms', function (req, res, next) {
-    let code = req.param('code');
+    let code = req.params('code');
 
     let sql = "(SELECT `id`,`picture`,`programType`,`name`,`departureDate`,`created_at` FROM `manarhajj`) UNION(SELECT `id`,`picture`,`programType`,`name`,`departureDate`,`created_at` FROM `manarumrah`)  ORDER BY `created_at` DESC";
     con.query(sql, function (err, result) {
@@ -17,7 +17,7 @@ router.get('/getAllManarPrograms', function (req, res, next) {
     });
 });
 router.get('/getManarUmrahProgram/:code', function (req, res, next) {
-    let code = req.param('code');
+    let code = req.params('code');
 
     let sql = "SELECT * FROM `manarumrah` WHERE `id`='" + code + "'"
     con.query(sql, function (err, result) {
@@ -30,7 +30,7 @@ router.get('/getManarUmrahProgram/:code', function (req, res, next) {
 
 router.get('/getManarHajjProgram/:code', function (req, res, next) {
 
-    let code = req.param('code');
+    let code = req.params('code');
 
     let sql = "SELECT * FROM `manarhajj` WHERE `id`='" + code + "'";
     con.query(sql, function (err, result) {
