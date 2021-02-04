@@ -4,7 +4,7 @@ var con = require('../db');
 
 
 router.get('/getMakkahHotels/:code', function (req, res, next) {
-    let code = req.params('code');
+    let code = req.params.code;
 
     let sql = "SELECT   `id`,`name`, `rating`, `location`, `currency`, `single`, `double`, `triple`, `quad`, `picture` FROM `" + code + "` WHERE `location`='makkah'"; //replace emp_info with your table name
     con.query(sql, function (err, result) {
@@ -17,7 +17,7 @@ router.get('/getMakkahHotels/:code', function (req, res, next) {
 
 router.get('/getMadinahHotels/:code', function (req, res, next) {
 
-    let code = req.params('code');
+    let code = req.params.code;
 
     let sql = "SELECT   `id`,`name`, `rating`, `location`, `currency`, `single`, `double`, `triple`, `quad`,  `picture` FROM `" + code + "` WHERE `location`='madinah'"
     con.query(sql, function (err, result) {
