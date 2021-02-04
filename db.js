@@ -1,16 +1,21 @@
 var mysql = require('mysql');
 
 //connect to database
-var con = mysql.createConnection({
-    // host:  process.env.DB_HOST,
-    // user:  process.env.DB_USER,
-    // password:  process.env.DB_PASSWORD,
-    // database: process.env.DB_NAME
+let options={
     host:  'localhost',
     user:  'root',
     password:  '',
     database: 'elmanartravel'
-});
+}
+if(process.NODE_ENV==='production'){
+    options={
+        host:  'manartravel-1510421787193:us-central1:manar-travel-sql-1',
+        user:  'root',
+        password:  'manartravel',
+        database: 'elmanartravel'
+    }
+}
+var con = mysql.createConnection(options);
 con.connect(function(err) {
     if (err) throw err;
     console.log("Connected!");
