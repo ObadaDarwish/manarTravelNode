@@ -8,8 +8,10 @@ router.get('/getAllManarPrograms', function (req, res, next) {
 
     let sql = "(SELECT `id`,`picture`,`programType`,`name`,`departureDate`,`created_at` FROM `manarhajj`) UNION(SELECT `id`,`picture`,`programType`,`name`,`departureDate`,`created_at` FROM `manarumrah`)  ORDER BY `created_at` DESC";
     con.query(sql, function (err, result) {
-        if (err)
+        if (err) {
+            console.log(err);
             res.status(404).send(err);
+        }
 
         res.send(result);
     });
