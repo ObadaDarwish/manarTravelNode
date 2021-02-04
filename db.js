@@ -9,10 +9,10 @@ let options={
 }
 if(process.env.NODE_ENV==='production'){
     options={
-        host:  'manartravel-1510421787193:us-central1:manar-travel-sql-1',
+        socketPath : '/cloudsql/manartravel-1510421787193:us-central1:manar-travel-sql-1',
         user:  'root',
         password:  'manartravel',
-        database: 'elmanartravel'
+        database: 'elmanartravel',
     }
 }
 var con = mysql.createConnection(options);
