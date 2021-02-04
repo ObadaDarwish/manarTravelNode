@@ -1,8 +1,0 @@
-runtime: nodejs12
-
-env_variables:
-  SQL_USER: root
-  SQL_HOST: 35.232.167.55
-  SQL_PASSWORD: manartravel
-  SQL_DATABASE: elmanartravel
-  SQL_CONNECTION_NAME: /cloudsql/manartravel-1510421787193:us-central1:manar-travel-sql-instance
