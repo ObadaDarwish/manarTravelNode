@@ -8,7 +8,7 @@ let options = {
     database: 'elmanartravel'
 }
 if (process.env.NODE_ENV === 'production') {
-    console.log(process.env.SQL_DATABASE)
+    console.log('DB:', process.env.SQL_DATABASE)
     options = {
         host: process.env.SQL_HOST,
         user: process.env.SQL_USER,
