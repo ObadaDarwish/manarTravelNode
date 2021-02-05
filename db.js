@@ -8,13 +8,14 @@ let options = {
     database: 'elmanartravel'
 }
 if (process.env.NODE_ENV === 'production') {
-    console.log('DB:', process.env.SQL_DATABASE)
     options = {
         host: process.env.SQL_HOST,
         user: process.env.SQL_USER,
         password: process.env.SQL_PASSWORD,
         database: process.env.SQL_DATABASE,
+        socketPath: process.env.SQL_CONNECTION_NAME
     }
+    console.log('DB:', options)
 }
 
 var con = mysql.createConnection(options);
